@@ -1,5 +1,6 @@
-// Pastikan jQuery sudah terload
+/// Pastikan jQuery sudah terload
 $(document).ready(function () {
+  console.log("jQuery sudah siap!");
 
   // === 1️⃣ SMOOTH SCROLL KE BAGIAN PRODUK ===
   $("#btn-belanja").click(function () {
