@@ -1,0 +1,361 @@
+/* ==============================
+   Global Style
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==============================
+   Header & Navigation
+============================== */
+header {
+  background: #1e88e5;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: #1565c0;
+}
+
+/* ==============================
+   Hero Section
+============================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 60px 10%;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #0d47a1;
+}
+
+.hero-text p {
+  margin: 15px 0 25px;
+  color: #555;
+}
+
+#btn-belanja {
+  background: #1e88e5;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btn-belanja:hover {
+  background: #1565c0;
+}
+
+.hero-img {
+  width: 350px;
+  max-width: 100%;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ==============================
+   About Section
+============================== */
+.about {
+  text-align: center;
+  padding: 60px 10%;
+  background: #fff;
+}
+
+.about h2 {
+  color: #0d47a1;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+  color: #555;
+}
+
+/* ==============================
+   Produk Unggulan & Grid
+============================== */
+.produk-unggulan, .produk-page {
+  padding: 60px 10%;
+  text-align: center;
+  background-color: #f4f7fa;
+}
+
+.produk-unggulan h2,
+.produk-page h2 {
+  font-size: 2rem;
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
+.produk-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.produk-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.produk-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.produk-card h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.produk-card p {
+  color: #1e88e5;
+  font-weight: 600;
+}
+
+/* ==============================
+   Fitur Sorting Section
+============================== */
+.sort-container {
+  text-align: center;
+  margin: 40px auto 10px;
+}
+
+.sort-container label {
+  font-weight: 500;
+  margin-right: 10px;
+  color: #333;
+}
+
+.sort-container select {
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ==============================
+   Pencarian Produk
+============================== */
+.search-box {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.search-box input {
+  width: 60%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #1e88e5;
+  box-shadow: 0 0 5px rgba(30, 136, 229, 0.3);
+}
+
+/* ==============================
+   WhatsApp Floating Button
+============================== */
+.wa-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.wa-float:hover {
+  transform: scale(1.1);
+  background-color: #20b858;
+}
+
+.wa-icon {
+  width: 35px;
+  height: 35px;
+}
+
+/* ==============================
+   Responsiveness
+============================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-img {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+
+  .search-box input {
+    width: 85%;
+  }
+}
+
+/* ====== Checkout ====== */
+.checkout-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px;
+  background: #f7faff;
+}
+
+.cart-items, .payment-section {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex: 1;
+}
+
+/* ====== Review ====== */
+.review-section {
+  margin-top: 60px;
+  background: #f9fbff;
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.review-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  margin-top: 15px;
+}
+
+.review-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ====== Buat halaman selalu penuh tinggi layar ====== */
+html, body {
+  height: 100%;
+}
+
+/* ====== Gunakan flexbox untuk dorong footer ke bawah ====== */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ====== Pastikan konten utama mengambil sisa ruang ====== */
+main {
+  flex: 1;
+}
+
+/* ====== Footer selalu di bawah ====== */
+footer {
+  text-align: center;
+  background: #1e88e5;
+  color: white;
+  padding: 15px 0;
+  font-size: 14px;
+  margin-top: auto; /* ini kunci utama */
+}
