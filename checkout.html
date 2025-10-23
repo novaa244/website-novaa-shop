@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - NovaShop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="png" href="images/Logo.png">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Checkout Pesanan</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="fitur.html">Fitur</a></li>
+        <li><a href="kontak.php">Kontak</a></li>
+        <li><a href="checkout.html" class="active">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="checkout-container">
+    <section class="cart-items">
+      <h2>Daftar Barang</h2>
+      <div id="cart-container"></div> <!-- ✅ diganti jadi div agar sesuai dengan JS -->
+      <p><strong>Total:</strong> Rp <span id="cart-total">0</span></p>
+      <button id="clear-cart">Hapus Semua</button>
+    </section>
+
+    <section class="payment-section">
+      <h2>Metode Pembayaran</h2>
+      <label><input type="radio" name="payment" value="QRIS" checked> QRIS</label><br>
+      <label><input type="radio" name="payment" value="Transfer Bank"> Transfer Bank</label>
+      <br><br>
+      <button id="confirm-payment">Bayar Sekarang</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 NovaShop. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cartContainer = document.getElementById("cart-container");
+  const cartTotal = document.getElementById("cart-total");
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = "<p>Keranjang masih kosong 😢</p>";
+    cartTotal.textContent = "0";
+    return;
+  }
+
+  let total = 0;
+  cartContainer.innerHTML = cart.map((item, index) => {
+   const harga = parseInt(String(item.price).replace(/[^\d]/g, ""), 10);
+   total += harga;
+    return `
+      <div class="checkout-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="info">
+          <h4>${item.name}</h4>
+          <p>${item.price}</p>
+        </div>
+        <button class="hapus" data-index="${index}">Hapus</button>
+      </div>
+    `;
+  }).join("");
+
+  cartTotal.textContent = total.toLocaleString("id-ID");
+
+  document.querySelectorAll(".hapus").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const index = e.target.dataset.index;
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    });
+  });
+
+  document.getElementById("clear-cart").addEventListener("click", () => {
+    localStorage.removeItem("cart");
+    location.reload();
+  });
+
+  document.getElementById("confirm-payment").addEventListener("click", () => {
+    const method = document.querySelector('input[name="payment"]:checked').value;
+    alert(`Pembayaran melalui ${method} berhasil! Terima kasih sudah berbelanja 💙`);
+    localStorage.removeItem("cart");
+    location.reload();
+  });
+});
+</script>
+
+</body>
+</html>
