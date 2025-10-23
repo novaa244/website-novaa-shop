@@ -48,25 +48,6 @@ Menampilkan deskripsi singkat tentang toko dan daftar produk unggulan dengan tam
 
 ---
 
-## 📂 Struktur Folder
-Toko_Online/
-│
-├── index.html # Halaman utama
-├── fitur.html # Halaman fitur produk & sorting harga
-├── produk.html # Daftar produk
-├── checkout.html # Proses pembayaran
-├── review.html # Sistem ulasan & rating
-├── kontak.php # Formulir kontak sederhana
-│
-├── script.js # Logika interaktif (keranjang, checkout, review)
-├── style.css # Styling dan layout utama
-│
-└── /images # Folder berisi gambar produk dan profil
-├── produk1.png
-├── produk2.png
-├── profil1.jpg
-└── profil2.jpg
-
 MIT License
 
 Copyright (c) 2025 Dianda Naufal Rahmanda
