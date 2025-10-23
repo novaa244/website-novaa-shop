@@ -48,6 +48,7 @@ Menampilkan deskripsi singkat tentang toko dan daftar produk unggulan dengan tam
 
 ---
 
+<<<<<<< HEAD
 ## 📂 Struktur Folder
 Toko_Online/
 │
@@ -67,6 +68,8 @@ Toko_Online/
 ├── profil1.jpg
 └── profil2.jpg
 
+=======
+>>>>>>> 59965ae67d11e9819b33bb11cf6319af882ef114
 MIT License
 
 Copyright (c) 2025 Dianda Naufal Rahmanda
